@@ -1,0 +1,20 @@
+これはBMAX Fakebotの日本語のヘルプ。
+
+
+BMAXはpsVitaランチャー、いくつかのアプリ/ゲーム付き。
+
+トリガーされたエラーは、ux0：data/debugLog.txt で観られます。
+
+
+特徴：
+
+ - help
+
+ - 
+
+ -
+
+
+Bunkaiによって開発されました。
+
+BMAXのWeb（英語）：https://homebrew-psvita.blogspot.com/2020/08/bmx-part-0.html
