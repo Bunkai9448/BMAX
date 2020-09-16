@@ -1,0 +1,20 @@
+This is the english help file for the BMAX Fakebot.
+
+
+BMAX is a psVita launcher, with some apps/games.
+
+Triggered errors can be viewed at: ux0:data/debugLog.txt
+
+
+Features:
+
+ - help 
+
+ -
+
+ -
+
+
+Developed by Bunkai.
+
+BMAX's web: https://homebrew-psvita.blogspot.com/2020/08/bmx-part-0.html
