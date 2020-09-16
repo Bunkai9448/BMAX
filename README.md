@@ -16,8 +16,7 @@
 
 **Prerequisites**
 
- - To run the program you will need a psvita with henkaku on it, or an emulator (like  
-    Vita3K). 
+ - To run the program you will need a psvita with henkaku on it, or an emulator (like Vita3K). 
 
 
 **Installing and running**
