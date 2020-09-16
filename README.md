@@ -10,6 +10,8 @@
 **Project building**
 
  - Modular homebrew. Made with c and sdl, using VitaSDK.
+ 
+ - use cmake and make to build the vpk
 
 
 **Prerequisites**
