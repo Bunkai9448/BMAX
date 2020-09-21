@@ -190,7 +190,7 @@ void help(char * lang) {
  printf("\n\t"); 
  printf("> printing help file.\n\t");
 
- char langFile [29] = "app0:/txt_files/help_"; // source file name (text common to all help files)
+ char langFile [29] = "app0:/bmax_files/help_"; // source file name (text common to all help files)
  strcat(langFile,lang);                        // add text specific for the language
  strcat(langFile,".txt");		        // add the extension (common to all files)
  
