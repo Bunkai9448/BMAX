@@ -38,3 +38,5 @@ char * appSelect();
 // arg1: lang selected. for those function that need it
 char * selectedApp();
 
+// function to ask the user if he/she really wants to close BMAX
+int exitBmax();

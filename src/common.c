@@ -318,4 +318,12 @@ char * selectedApp(char * selApp, char * lang) {
  return lang;
 }
 
-
+// TODO currently only a dummy to test
+// ask the user if he/she really wants to close BMAX
+int exitBmax() {
+ int end = 1 ; // 1 if he confirms, 0 if he declines
+ 
+ // add control buttons to ask and a png to show the question
+ 
+ return end;
+}
