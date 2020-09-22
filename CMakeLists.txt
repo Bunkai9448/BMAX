@@ -14,7 +14,7 @@ include("${VITASDK}/share/vita.cmake" REQUIRED)
 
 set(VITA_APP_NAME "BMAX")
 set(VITA_TITLEID  "BUNKAI001")
-set(VITA_VERSION  "01.01")
+set(VITA_VERSION  "02.00")
 
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=gnu11")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
@@ -63,4 +63,5 @@ vita_create_vpk(${PROJECT_NAME}.vpk ${VITA_TITLEID} ${PROJECT_NAME}.self
   FILE bmax_files/help_SPA.txt bmax_files/help_SPA.txt
   FILE bmax_files/help_JPN.txt bmax_files/help_JPN.txt
   FILE bmax_files/goodbye.png bmax_files/goodbye.png
+  FILE btn_dash/ps_vita_buttons.bmp btn_dash/ps_vita_buttons.bmp  
 )
