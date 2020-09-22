@@ -30,13 +30,11 @@ void echoFile() ;
 // arg0: language
 void help();
 
-//TODO
-// function to select the app to launch
-//
+// function to select the app to launch, this is the main menu of the homebrew
 char * appSelect();
 
-//TODO
 // function to launch the selected app in appSelect()
 // arg0: app to launch
-void selectedApp();
+// arg1: lang selected. for those function that need it
+char * selectedApp();
 

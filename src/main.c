@@ -13,13 +13,15 @@ int main(int argc, char *argv[]) {
   // check debugLog and serves as introductory sentence for the app
   debugLog ("ux0:data/debugLog.txt","\"Knowledge begins in wonder\"\n\tSocrates."); 
   
-//  char * lang = chooseLang(); // IME dialog to get the language to use in the app
+  char * lang = chooseLang(); // IME dialog to get the language to use in the app
 
 //  help(lang); // shows the help to the user to read in his/her language of choose 
 
- char * selApp = appSelect();
-  psvDebugScreenInit();
-  printf(selApp);
+ char * selApp = appSelect(); // main menu 
+
+ // launch selected app and returns language (for those cases when the language changes)
+ lang = selectedApp(selApp,lang); 
+
 
   // SDL loading and loop
   mainScreen();

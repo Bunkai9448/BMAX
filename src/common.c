@@ -301,3 +301,21 @@ char * appSelect() {
  gxm_term();
  return selApp; 
 }
+
+// launch the user selected app, with the selected language (if the function requires it)
+// returns a char to give the option to chooseLang
+char * selectedApp(char * selApp, char * lang) {
+
+
+ if ( !strcmp(selApp,"help") ) help(lang);
+ 
+ if ( !strcmp(selApp,"chooseLang") ) lang = chooseLang();
+
+ if ( !strcmp(selApp,"buttonDash") ) ;
+
+ if ( !strcmp(selApp,"exit") ) ; // it currently does nothing, just as reminder
+
+ return lang;
+}
+
+
