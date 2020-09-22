@@ -30,3 +30,13 @@ void echoFile() ;
 // arg0: language
 void help();
 
+//TODO
+// function to select the app to launch
+//
+char * appSelect();
+
+//TODO
+// function to launch the selected app in appSelect()
+// arg0: app to launch
+void selectedApp();
+

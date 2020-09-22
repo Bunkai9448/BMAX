@@ -197,3 +197,107 @@ void help(char * lang) {
  echoFile(langFile);
 }
 
+// function to select the app to launch
+char * appSelect() {
+
+ char * selApp; // var to save input
+
+ uint16_t input[SCE_IME_DIALOG_MAX_TEXT_LENGTH + 1] = {0};
+ SceImeDialogParam param; // dialog display struct 
+ int shown_dial = 0;  // boolean: 0 = false, 1 = true
+ bool valid_app = false; // indicates if the app is valid
+
+ sceAppUtilInit(&(SceAppUtilInitParam){}, &(SceAppUtilBootParam){});
+ sceCommonDialogSetConfigParam(&(SceCommonDialogConfigParam){});
+
+ gxm_init();
+
+
+ // input loop 
+ while (!valid_app) {
+  //clear current screen buffer
+	memset(dbuf[backBufferIndex].data,0xff000000,DISPLAY_HEIGHT*DISPLAY_STRIDE_IN_PIXELS*4);
+
+	// shown dialog parameters
+	if (!shown_dial) {
+		sceImeDialogParamInit(&param);
+
+		param.supportedLanguages = SCE_IME_LANGUAGE_ENGLISH;
+		param.languagesForced = SCE_TRUE;
+		param.type = SCE_IME_DIALOG_TEXTBOX_MODE_DEFAULT;
+		param.option = 0;
+		param.textBoxMode = SCE_IME_DIALOG_TEXTBOX_MODE_DEFAULT;
+		param.title = u"Select app!";
+		param.maxTextLength = SCE_IME_DIALOG_MAX_TEXT_LENGTH;
+		param.initialText = u"help";
+		param.inputTextBuffer = input;
+
+		shown_dial = sceImeDialogInit(&param) > 0;
+	}
+
+
+	// is exit condition met?
+	if (sceImeDialogGetStatus() == SCE_COMMON_DIALOG_STATUS_FINISHED) {
+	 // filling buffer with the inputs
+		SceImeDialogResult result={};
+		sceImeDialogGetResult(&result); // get the language of choice	
+		// check if the user has finished typing (last input is enter key)
+		uint16_t*last_input = (result.button == SCE_IME_DIALOG_BUTTON_ENTER) ? input:u"";
+					
+		// check if the language is correct and save it
+			
+			if (valid_app = !memcmp(last_input,u"help",4*sizeof(u' '))){
+			 sceImeDialogTerm(); // lang is correct,
+			 shown_dial = 1;     // finish looping 
+	
+			 selApp = "help"; // save the selected lang in the global var
+			 break;	
+			}
+				
+				
+			if (valid_app = !memcmp(last_input,u"chooseLang",4*sizeof(u' '))){
+			 sceImeDialogTerm(); // lang is correct,
+			 shown_dial = 1;     // finish looping 
+				
+			 selApp = "chooseLang"; // save the selected lang in the global var
+			 break;	
+			}
+			
+			
+			if (valid_app = !memcmp(last_input,u"buttonDash",4*sizeof(u' '))){
+			 sceImeDialogTerm(); // lang is correct,
+			 shown_dial = 1;     // finish looping 
+				
+			 selApp = "buttonDash"; // save the selected lang in the global var
+			 break;	
+			}			
+				
+				
+			if (valid_app = !memcmp(last_input,u"exit",4*sizeof(u' '))){
+			 sceImeDialogTerm(); // lang is correct,
+			 shown_dial = 1;     // finish looping 
+				
+			 selApp = "exit"; // save the selected lang in the global var
+			 break;	
+			}			
+				
+			sceImeDialogTerm(); // lang is not correct,
+			shown_dial = 0; // respawn sceImeDialogInit on next loop 
+							
+	}
+
+	// still inside the loop
+		
+		sceCommonDialogUpdate(&(SceCommonDialogUpdateParam){{
+		NULL,dbuf[backBufferIndex].data,0,0,
+		DISPLAY_WIDTH,DISPLAY_HEIGHT,DISPLAY_STRIDE_IN_PIXELS},
+		dbuf[backBufferIndex].sync});
+
+	gxm_swap();
+	sceDisplayWaitVblankStart();
+
+ } // exiting the loop
+	
+ gxm_term();
+ return selApp; 
+}
