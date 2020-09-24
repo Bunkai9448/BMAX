@@ -26,8 +26,8 @@ int main(int argc, char *argv[]) {
    
    // if he/she wants to exit, launch a confirmation screen to close BMAX
 
-   if ( !strcmp(selApp,"exit") ) end = exitBmax() ; // exit = 0 means he/she confirms
-   			                  // exit = 1 means he/she declines
+   if ( !strcmp(selApp,"exit") ) end = exitBmax() ; // exit = 1 means he/she confirms
+   			                  // exit = 0 means he/she declines
    
  } while (!end); // check condition for the homebrew's main loop 
 
