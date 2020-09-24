@@ -311,7 +311,7 @@ char * selectedApp(char * selApp, char * lang) {
  
  if ( !strcmp(selApp,"chooseLang") ) lang = chooseLang();
 
- if ( !strcmp(selApp,"buttonDash") ) ;
+ if ( !strcmp(selApp,"buttonDash") ) btnDashGame();
 
  if ( !strcmp(selApp,"exit") ) ; // it currently does nothing, just as reminder
 
