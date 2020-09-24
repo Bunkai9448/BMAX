@@ -13,6 +13,8 @@
  
  - use cmake and make to build the vpk
 
+ - It also uses the common folder from vitasdk/samples https://github.com/vitasdk/samples/tree/master/common
+
 
 **Prerequisites**
 
