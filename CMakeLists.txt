@@ -14,7 +14,7 @@ include("${VITASDK}/share/vita.cmake" REQUIRED)
 
 set(VITA_APP_NAME "BMAX")
 set(VITA_TITLEID  "BUNKAI001")
-set(VITA_VERSION  "02.00")
+set(VITA_VERSION  "02.01")
 
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=gnu11")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
@@ -63,6 +63,28 @@ vita_create_vpk(${PROJECT_NAME}.vpk ${VITA_TITLEID} ${PROJECT_NAME}.self
   FILE bmax_files/help_ENG.txt bmax_files/help_ENG.txt
   FILE bmax_files/help_SPA.txt bmax_files/help_SPA.txt
   FILE bmax_files/help_JPN.txt bmax_files/help_JPN.txt
-  FILE bmax_files/goodbye.png bmax_files/goodbye.png
-  FILE btn_dash/ps_vita_buttons.bmp btn_dash/ps_vita_buttons.bmp  
+  FILE bmax_files/goodbye.bmp bmax_files/goodbye.bmp
+  FILE btn_dash/btn_dash_rulesENG.bmp btn_dash/btn_dash_rulesENG.bmp
+  FILE btn_dash/btn_dash_rulesSPA.bmp btn_dash/btn_dash_rulesSPA.bmp
+  FILE btn_dash/btn_dash_rulesJPN.bmp btn_dash/btn_dash_rulesJPN.bmp
+  FILE btn_dash/b_L.bmp btn_dash/b_L.bmp
+  FILE btn_dash/b_L2.bmp btn_dash/b_L2.bmp
+  FILE btn_dash/b_R.bmp btn_dash/b_R.bmp
+  FILE btn_dash/b_R2.bmp btn_dash/b_R2.bmp
+  FILE btn_dash/b_triangle.bmp btn_dash/b_triangle.bmp
+  FILE btn_dash/b_triangle2.bmp btn_dash/b_triangle2.bmp
+  FILE btn_dash/b_square.bmp btn_dash/b_square.bmp
+  FILE btn_dash/b_square2.bmp btn_dash/b_square2.bmp
+  FILE btn_dash/b_X.bmp btn_dash/b_X.bmp
+  FILE btn_dash/b_X2.bmp btn_dash/b_X2.bmp
+  FILE btn_dash/b_circle.bmp btn_dash/b_circle.bmp
+  FILE btn_dash/b_circle2.bmp btn_dash/b_circle2.bmp
+  FILE btn_dash/b_up.bmp btn_dash/b_up.bmp
+  FILE btn_dash/b_up2.bmp btn_dash/b_up2.bmp
+  FILE btn_dash/b_left.bmp btn_dash/b_left.bmp
+  FILE btn_dash/b_left2.bmp btn_dash/b_left2.bmp
+  FILE btn_dash/b_down.bmp btn_dash/b_down.bmp
+  FILE btn_dash/b_down2.bmp btn_dash/b_down2.bmp
+  FILE btn_dash/b_right.bmp btn_dash/b_right.bmp
+  FILE btn_dash/b_right2.bmp btn_dash/b_right2.bmp
 )
