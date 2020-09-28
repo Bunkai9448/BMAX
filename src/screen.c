@@ -12,40 +12,54 @@
 //Vita Screen dimension defined in the debugScreen files
 
 //Vita Screen SDL variables
-SDL_Window    * gWindow   = NULL; // window rendered to
-SDL_Renderer  * gRenderer = NULL; // surface contained by the window
- 
-
-// redrectangle, future game loop
-SDL_Rect fillRect = { SCREEN_WIDTH  /4, 
-		      SCREEN_HEIGHT /4, 
-		      SCREEN_WIDTH  /2, 
-		      SCREEN_HEIGHT /2
-};
+SDL_Window    * gWindow    = NULL;  // window rendered to
+SDL_Surface   * gSurface   = NULL;  // surface contained by the window
+SDL_Surface   * gImage     = NULL;  // The image we will load
 
 
-void mainScreen(){
+void goodBye(){ // this should be divided in more functions for modularity.
 
   // initializing
   if( SDL_Init( SDL_INIT_VIDEO ) < 0 )
-     debugLog ("ux0:data/debugLog.txt","error sdl initializing");;
+     debugLog ("ux0:data/debugLog.txt","error sdl [initializing]");
 
+  else { //if SDL was initialized, create window
 
-  // program_loop
-    if ((gWindow = SDL_CreateWindow( "RedRectangle", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN)) == NULL)
-    debugLog ("ux0:data/debugLog.txt","error sdl creating window");
+    if ((gWindow = SDL_CreateWindow( "GoodBye", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN)) == NULL)
+    debugLog ("ux0:data/debugLog.txt","error sdl [creating window]");
 
-  if ((gRenderer = SDL_CreateRenderer( gWindow, -1, 0)) == NULL)
-    debugLog ("ux0:data/debugLog.txt","error sdl creating render");;
+    else { // if window was created, create render
+      
+       if (((gSurface = SDL_GetWindowSurface( gWindow ))) == NULL)
+           debugLog ("ux0:data/debugLog.txt","error sdl [creating render]");
+    
+       else { // if render was created, load image
+
+          if (( gImage = SDL_LoadBMP( "app0:/bmax_files/goodbye.bmp" )) == NULL ) 
+           debugLog ("ux0:data/debugLog.txt","error sdl [creating surface]"); 
+          
+	   //Apply the image
+	   SDL_BlitSurface( gImage, NULL, gSurface, NULL );
+			
+	   //Update the surface
+	   SDL_UpdateWindowSurface( gWindow );
+         
+      }
+    }
+  }
   
+  SDL_Delay(3000); // screen delay to give time to see it
+  
+  //Deallocate surface
+  SDL_FreeSurface( gImage );
+  gImage = NULL;
 
-  SDL_SetRenderDrawColor( gRenderer, 255,0,0,255);
-  SDL_RenderFillRect( gRenderer, &fillRect );
-  SDL_RenderPresent( gRenderer );
-  SDL_Delay(4000);
-  SDL_DestroyRenderer( gRenderer );
+  //Destroy window
   SDL_DestroyWindow( gWindow );
   gWindow = NULL;
-  gRenderer = NULL;
+
+  //Quit SDL subsystems
+  SDL_Quit();
+
 }
 

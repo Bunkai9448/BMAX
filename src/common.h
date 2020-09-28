@@ -16,8 +16,8 @@
 // arg1: text to print
 int debugLog();
 
-// function for the screenLoop or main screen of the program
-void mainScreen();
+// function to say goodBye as initiation to SDL
+void goodBye();
 
 // function to choose the lang of the app (for specific texts)
 char * chooseLang();

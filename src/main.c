@@ -33,11 +33,10 @@ int main(int argc, char *argv[]) {
 
 
 
-  // SDL loading and loop, currently only used to show something before the exit
-  mainScreen();
+  // load an image with SDL to say goodbye. 
+  goodBye();
 
   // exiting
-  SDL_Quit();
   sceKernelExitProcess(0); // close and exit the app thread
   return 0;
 }
