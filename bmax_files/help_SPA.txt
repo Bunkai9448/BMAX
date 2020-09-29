@@ -10,9 +10,11 @@ Funciones:
 
  - help 
 
- - 
+ - chooseLang
 
- -
+ - buttonDash
+ 
+ - exit
 
 
 Desarrollado por Bunkai.

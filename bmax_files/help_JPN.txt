@@ -8,11 +8,13 @@ BMAXはpsVitaランチャー、いくつかのアプリ/ゲーム付き。
 
 特徴：
 
- - help
+ - help 
 
- - 
+ - chooseLang
 
- -
+ - buttonDash
+ 
+ - exit
 
 
 Bunkaiによって開発されました。

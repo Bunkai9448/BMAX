@@ -10,9 +10,11 @@ Features:
 
  - help 
 
- -
+ - chooseLang
 
- -
+ - buttonDash
+ 
+ - exit
 
 
 Developed by Bunkai.
