@@ -16,7 +16,19 @@
 // arg1: text to print
 int debugLog();
 
-// function to say goodBye as initiation to SDL
+// function to init SDL
+// return 0 if correct, 1 if false
+int initSDL();
+
+// function to load bmp on screen with sdl
+// arg0: (char *) img datapath
+// return 0 if correct, 1 if false
+int loadBMP();
+
+// function to clean memory and close SDL
+void closeSDL();
+
+// dummy function to check SDL and load a goodbye image for the BMAX app
 void goodBye();
 
 // function to choose the lang of the app (for specific texts)
