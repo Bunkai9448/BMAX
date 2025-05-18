@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.16)
 
 if(NOT DEFINED CMAKE_TOOLCHAIN_FILE)
   if(DEFINED ENV{VITASDK})
@@ -16,15 +16,15 @@ set(VITA_APP_NAME "BMAX")
 set(VITA_TITLEID  "BUNKAI001")
 set(VITA_VERSION  "02.01")
 
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=gnu11")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 include_directories(
-  ../common
+  ../samples/common 
 )
 
 add_executable(${PROJECT_NAME}
-  ../common/debugScreen.c
+  ../samples/common/debugScreen.c
   src/main.c
   src/common.c
   src/screen.c
