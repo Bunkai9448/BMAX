@@ -12,6 +12,8 @@ endif()
 project(BMAX)
 include("${VITASDK}/share/vita.cmake" REQUIRED)
 
+find_package(SDL2 REQUIRED)
+
 set(VITA_APP_NAME "BMAX")
 set(VITA_TITLEID  "BUNKAI001")
 set(VITA_VERSION  "02.01")
@@ -35,7 +37,7 @@ target_link_libraries(${PROJECT_NAME}
   SceAppUtil_stub
   SceCommonDialog_stub
   SceSysmodule_stub
-  SDL2
+  SDL2::SDL2
   vita2d
   SceDisplay_stub
   SceCtrl_stub
